@@ -13,6 +13,10 @@ body {
 
 
 }
+.footer{
+    margin:20px auto;
+    max-width:800px
+}
 
 button {
     background: #a2a8d3;

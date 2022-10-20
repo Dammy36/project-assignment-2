@@ -24,26 +24,23 @@ function search(event) {
   h1.innerHTML = `${searchInput.value}`;
 }
 let form = document.querySelector("#select-form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", searchCity);
 
-
-function select( event){
-event.preventDefault()
-let tempareture= document.querySelector("#current-tempareture")
-tempareture.innerHTML=26
+function select(event) {
+  event.preventDefault();
+  let tempareture = document.querySelector("#current-tempareture");
+  tempareture.innerHTML = 26;
 }
-function city(event){
-  event.preventDefault()
-  let city= document.querySelector("#current-tempareture")
-  city.innerHTML=60
+function city(event) {
+  event.preventDefault();
+  let city = document.querySelector("#current-tempareture");
+  city.innerHTML = 60;
 }
 
-
-let celsius= document.querySelector("#celsius-link")
+let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", select);
-let fahrenheit=document.querySelector("#fahrenheit-link");
-fahrenheit.addEventListener("click", city)
-
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", city);
 
 function showCity(city) {
   let apikey = "2daf65f0cdaa917f11026e8a128ce271";
@@ -60,7 +57,6 @@ function searchCity(event) {
 
   showCity(searchInput.value);
 }
-
 
 function searchLocaton(position) {
   let lat = position.coords.latitude;
@@ -90,7 +86,4 @@ function showWeather(response) {
 
   let describtion = document.querySelector("#desc");
   describtion.innerHTML = response.data.weather[0].main;
-
-  
-  
 }
